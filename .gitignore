@@ -61,6 +61,7 @@ gradle.properties
 .idea/caches/
 .idea/assetWizardSettings.xml
 .idea/codeStyles/Project.xml
+.idea/jarRepositories.xml
 .navigation/
 
 # jniLibs files

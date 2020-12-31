@@ -102,7 +102,7 @@ public class FragmentTransactionItem extends Fragment {
         mDateText = (TextView) rootView.findViewById(R.id.date_text);
         mToFromBottom = (TextView) rootView.findViewById(R.id.to_from);
         mConfirmationText = (TextView) rootView.findViewById(R.id.confirmation_text);
-        mAvailableSpend = (TextView) rootView.findViewById(R.id.available_spend);
+        //mAvailableSpend = (TextView) rootView.findViewById(R.id.available_spend);
         mTxHash = (TextView) rootView.findViewById(R.id.tx_hash);
         mTxHashLink = (TextView) rootView.findViewById(R.id.tx_hash_link);
         close = (ImageButton) rootView.findViewById(R.id.close_button);
@@ -147,7 +147,7 @@ public class FragmentTransactionItem extends Fragment {
 //        Log.e(TAG, "fillTexts fee: " + item.getFee());
 //        Log.e(TAG, "fillTexts hash: " + item.getHexId());
         //get the current iso
-        String iso = BRSharedPrefs.getPreferredLTC(getActivity()) ? "LTC" : BRSharedPrefs.getIso(getContext());
+        String iso = BRSharedPrefs.getPreferredLTC(getActivity()) ? "TZC" : BRSharedPrefs.getIso(getContext());
 
         //get the tx amount
         BigDecimal txAmount = new BigDecimal(item.getReceived() - item.getSent()).abs();
@@ -219,7 +219,7 @@ public class FragmentTransactionItem extends Fragment {
                 availableForSpend = true;
                 break;
         }
-
+/*
         boolean removeView = sent || !availableForSpend;
         Log.e(TAG, "fillTexts: removeView : " + removeView);
         if (!removeView) {
@@ -228,7 +228,7 @@ public class FragmentTransactionItem extends Fragment {
             mAvailableSpend.setText("");
             signalLayout.removeView(mAvailableSpend);
         }
-
+*/
         if (level == 6) {
             mConfirmationText.setText(getString(R.string.Transaction_complete));
         } else {

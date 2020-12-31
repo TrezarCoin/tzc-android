@@ -98,6 +98,7 @@ public class InputWordsActivity extends BRActivity {
         }
 
         ImageButton faq = (ImageButton) findViewById(R.id.faq_button);
+        faq.setVisibility(View.GONE);
         //TODO: all views are using the layout of this button. Views should be refactored without it
         // Hiding until layouts are built.
 

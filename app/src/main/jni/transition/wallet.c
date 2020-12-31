@@ -525,6 +525,7 @@ Java_com_breadwallet_wallet_BRWalletManager_feeForTransaction(JNIEnv *env, jobje
     __android_log_print(ANDROID_LOG_DEBUG, "Message from C: ", "feeForTransaction");
     if (!_wallet) return 0;
     const char *rawAddress = (*env)->GetStringUTFChars(env, address, NULL);
+    if (rawAddress == NULL || !BRAddressIsValid(rawAddress)) return 0;
     BRTransaction *tx = BRWalletCreateTransaction(_wallet, (uint64_t) amount, rawAddress);
     if (!tx) return 0;
     return (jint) BRWalletFeeForTx(_wallet, tx);
@@ -546,6 +547,7 @@ Java_com_breadwallet_wallet_BRWalletManager_tryTransaction(JNIEnv *env, jobject 
     if (!_wallet) return 0;
 
     const char *rawAddress = (*env)->GetStringUTFChars(env, jAddress, NULL);
+    if (rawAddress == NULL || !BRAddressIsValid(rawAddress)) return 0;
     BRTransaction *tx = BRWalletCreateTransaction(_wallet, (uint64_t) jAmount, rawAddress);
 
     if (!tx) return NULL;

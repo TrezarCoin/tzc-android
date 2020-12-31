@@ -5,22 +5,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.NetworkOnMainThreadException;
 import android.security.keystore.UserNotAuthenticatedException;
-import androidx.annotation.WorkerThread;
+//import androidx.annotation.WorkerThread;
 
 import android.util.Log;
 
-import com.breadwallet.BreadApp;
+//import com.breadwallet.BreadApp;
 import com.breadwallet.R;
 import com.breadwallet.presenter.activities.SetPinActivity;
 import com.breadwallet.presenter.activities.PaperKeyActivity;
 import com.breadwallet.presenter.activities.PaperKeyProveActivity;
 import com.breadwallet.presenter.activities.intro.WriteDownActivity;
-import com.breadwallet.presenter.activities.settings.WithdrawBchActivity;
+//import com.breadwallet.presenter.activities.settings.WithdrawBchActivity;
 import com.breadwallet.presenter.activities.util.ActivityUTILS;
-import com.breadwallet.presenter.customviews.BRDialogView;
+//import com.breadwallet.presenter.customviews.BRDialogView;
 import com.breadwallet.presenter.entities.PaymentItem;
 import com.breadwallet.presenter.entities.PaymentRequestWrapper;
-import com.breadwallet.tools.animation.BRDialog;
+//import com.breadwallet.tools.animation.BRDialog;
 import com.breadwallet.tools.manager.BRReportsManager;
 import com.breadwallet.tools.manager.BRSharedPrefs;
 import com.breadwallet.tools.threads.BRExecutor;
@@ -29,19 +29,19 @@ import com.breadwallet.tools.util.BRConstants;
 import com.breadwallet.tools.util.TypesConverter;
 import com.breadwallet.tools.util.Utils;
 import com.breadwallet.wallet.BRWalletManager;
-import com.platform.APIClient;
+//import com.platform.APIClient;
 import com.platform.entities.TxMetaData;
 import com.platform.tools.BRBitId;
 import com.platform.tools.KVStoreManager;
 
-import java.io.IOException;
+//import java.io.IOException;
 import java.util.Arrays;
-
+/*
 import okhttp3.MediaType;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-
+*/
 /**
  * BreadWallet
  * <p/>
@@ -245,7 +245,7 @@ public class PostAuth {
         }
 
     }
-
+/*
     public void onSendBch(final Activity app, boolean authAsked, String bchAddress) {
 //        this.bchAddress = bchAddress;
         byte[] phrase = null;
@@ -346,7 +346,7 @@ public class PostAuth {
         }
 
     }
-
+*/
     public void onPaymentProtocolRequest(Activity app, boolean authAsked) {
 
         byte[] rawSeed;

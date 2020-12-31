@@ -271,35 +271,28 @@ public class TransactionListAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         }
         boolean availableForSpend = false;
         String sentReceived = received ? "Receiving" : "Sending";
-        String percentage = "";
         switch (level) {
             case 0:
-                percentage = "0%";
                 break;
             case 1:
-                percentage = "20%";
                 break;
             case 2:
-                percentage = "40%";
                 availableForSpend = true;
                 break;
             case 3:
-                percentage = "60%";
                 availableForSpend = true;
                 break;
             case 4:
-                percentage = "80%";
                 availableForSpend = true;
                 break;
             case 5:
-                percentage = "100%";
                 availableForSpend = true;
                 break;
         }
         if (availableForSpend && received) {
-            convertView.status_2.setText(mContext.getString(R.string.Transaction_available));
+            //convertView.status_2.setText(mContext.getString(R.string.Transaction_available));
         } else {
-            convertView.constraintLayout.removeView(convertView.status_2);
+            //convertView.constraintLayout.removeView(convertView.status_2);
             ConstraintSet set = new ConstraintSet();
             set.clone(convertView.constraintLayout);
             int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16, mContext.getResources().getDisplayMetrics());
@@ -311,7 +304,7 @@ public class TransactionListAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         if (level == 6) {
             convertView.status.setText(mContext.getString(R.string.Transaction_complete));
         } else {
-            convertView.status.setText(String.format("%s - %s", sentReceived, percentage));
+            convertView.status.setText(String.format("%s", sentReceived));
         }
 
         if (!item.isValid())
@@ -320,7 +313,7 @@ public class TransactionListAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         long satoshisAmount = received ? item.getReceived() : (item.getSent() - item.getReceived());
 
         boolean isBTCPreferred = BRSharedPrefs.getPreferredLTC(mContext);
-        String iso = isBTCPreferred ? "LTC" : BRSharedPrefs.getIso(mContext);
+        String iso = isBTCPreferred ? "TZC" : BRSharedPrefs.getIso(mContext);
         convertView.amount.setText(BRCurrency.getFormattedCurrencyString(mContext, iso, BRExchange.getAmountFromSatoshis(mContext, iso, new BigDecimal(satoshisAmount))));
 
         //if it's 0 we use the current time.
@@ -447,7 +440,7 @@ public class TransactionListAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             toFrom = (TextView) view.findViewById(R.id.to_from);
             account = (TextView) view.findViewById(R.id.account);
             status = (TextView) view.findViewById(R.id.status);
-            status_2 = (TextView) view.findViewById(R.id.status_2);
+            //status_2 = (TextView) view.findViewById(R.id.status_2);
             timestamp = (TextView) view.findViewById(R.id.timestamp);
             comment = (TextView) view.findViewById(R.id.comment);
             arrowIcon = (ImageView) view.findViewById(R.id.arrow_icon);

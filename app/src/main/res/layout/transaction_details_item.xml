@@ -154,16 +154,6 @@
                     android:textColor="@color/almost_black"
                     android:textIsSelectable="true"/>
 
-                <com.breadwallet.presenter.customviews.BRText
-                    android:id="@+id/available_spend"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="@string/Transaction.available"
-                    android:textColor="#48F0B8"
-                    android:textIsSelectable="true"
-                    app:customTFont="BarlowSemiCondensed-Bold.ttf"/>
-
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"

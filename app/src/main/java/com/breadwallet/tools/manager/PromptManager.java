@@ -9,7 +9,7 @@ import com.breadwallet.R;
 import com.breadwallet.presenter.activities.UpdatePinActivity;
 import com.breadwallet.presenter.activities.intro.WriteDownActivity;
 import com.breadwallet.presenter.activities.settings.FingerprintActivity;
-import com.breadwallet.presenter.activities.settings.ShareDataActivity;
+//import com.breadwallet.presenter.activities.settings.ShareDataActivity;
 import com.breadwallet.tools.security.BRKeyStore;
 import com.breadwallet.tools.threads.BRExecutor;
 import com.breadwallet.tools.util.Utils;
@@ -104,8 +104,6 @@ public class PromptManager {
         if (shouldPrompt(app, RECOMMEND_RESCAN)) return RECOMMEND_RESCAN;
         if (shouldPrompt(app, UPGRADE_PIN)) return UPGRADE_PIN;
         if (shouldPrompt(app, PAPER_KEY)) return PAPER_KEY;
-        if (shouldPrompt(app, FINGER_PRINT)) return FINGER_PRINT;
-        if (shouldPrompt(app, SHARE_DATA)) return SHARE_DATA;
         return null;
     }
 
@@ -152,6 +150,7 @@ public class PromptManager {
                         });
                     }
                 });
+/*
             case SHARE_DATA:
                 return new PromptInfo(app.getString(R.string.Prompts_ShareData_title), app.getString(R.string.Prompts_ShareData_body), new View.OnClickListener() {
                     @Override
@@ -166,7 +165,7 @@ public class PromptManager {
                         });
                     }
                 });
-
+*/
         }
         return null;
     }

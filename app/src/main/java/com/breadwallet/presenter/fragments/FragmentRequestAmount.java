@@ -114,7 +114,7 @@ public class FragmentRequestAmount extends Fragment {
         isoText = (TextView) rootView.findViewById(R.id.iso_text);
         amountEdit = (EditText) rootView.findViewById(R.id.amount_edit);
         amountBuilder = new StringBuilder(0);
-        isoButton = (Button) rootView.findViewById(R.id.iso_button);
+        //isoButton = (Button) rootView.findViewById(R.id.iso_button);
         mTitle = (TextView) rootView.findViewById(R.id.title);
         mAddress = (TextView) rootView.findViewById(R.id.address_text);
         mQrImage = (ImageView) rootView.findViewById(R.id.qr_image);
@@ -137,7 +137,7 @@ public class FragmentRequestAmount extends Fragment {
         signalLayout.removeView(request);
 
         showCurrencyList(false);
-        selectedIso = BRSharedPrefs.getPreferredLTC(getContext()) ? "LTC" : BRSharedPrefs.getIso(getContext());
+        selectedIso = BRSharedPrefs.getPreferredLTC(getContext()) ? "TZC" : BRSharedPrefs.getIso(getContext());
 
         signalLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -245,7 +245,7 @@ public class FragmentRequestAmount extends Fragment {
                 getActivity().onBackPressed();
             }
         });
-
+/*
         isoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -260,7 +260,7 @@ public class FragmentRequestAmount extends Fragment {
                 updateText();
             }
         });
-
+*/
     }
 
     private void copyText() {
@@ -307,7 +307,7 @@ public class FragmentRequestAmount extends Fragment {
                     @Override
                     public void run() {
                         mAddress.setText(receiveAddress);
-                        boolean generated = generateQrImage(receiveAddress, "0", "LTC");
+                        boolean generated = generateQrImage(receiveAddress, "0", "TZC");
                         if (!generated)
                             throw new RuntimeException("failed to generate qr image for address");
                     }
@@ -399,8 +399,8 @@ public class FragmentRequestAmount extends Fragment {
         if (getActivity() == null) return;
         String tmpAmount = amountBuilder.toString();
         amountEdit.setText(tmpAmount);
-        isoText.setText(BRCurrency.getSymbolByIso(getActivity(), selectedIso));
-        isoButton.setText(String.format("%s(%s)", BRCurrency.getCurrencyName(getActivity(), selectedIso), BRCurrency.getSymbolByIso(getActivity(), selectedIso)));
+        //isoText.setText(BRCurrency.getSymbolByIso(getActivity(), selectedIso));
+        //isoButton.setText(String.format("%s(%s)", BRCurrency.getCurrencyName(getActivity(), selectedIso), BRCurrency.getSymbolByIso(getActivity(), selectedIso)));
 
     }
 
@@ -433,7 +433,7 @@ public class FragmentRequestAmount extends Fragment {
             String am = new BigDecimal(amount).divide(new BigDecimal(100000000), 8, BRConstants.ROUNDING_MODE).toPlainString();
             amountArg = "?amount=" + am;
         }
-        return QRUtils.generateQR(getActivity(), "litecoin:" + address + amountArg, mQrImage);
+        return QRUtils.generateQR(getActivity(), "trezarcoin:" + address + amountArg, mQrImage);
     }
 
 
