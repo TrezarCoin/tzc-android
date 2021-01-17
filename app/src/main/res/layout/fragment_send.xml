@@ -27,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:background="@color/button_primary_normal"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="81dp">
 
@@ -96,6 +97,7 @@
                 android:ellipsize="middle"
                 android:ems="10"
                 android:hint="@string/Send.toLabel"
+                android:textSize="@dimen/sub_header"
                 android:inputType="textPersonName"
                 android:singleLine="true" />
 
@@ -104,19 +106,19 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:layout_marginEnd="@dimen/bread_margin"
                 android:layout_weight="0.7"
                 android:background="@android:color/transparent"
-                android:minHeight="50dp"
+                android:minHeight="52dp"
                 android:paddingStart="8dp"
                 android:paddingTop="12dp"
                 android:paddingEnd="8dp"
-                android:paddingBottom="12dp"
+                android:paddingBottom="8dp"
                 android:text="@string/Send.pasteLabel"
-                android:textColor="@color/light_gray"
-                android:textSize="16sp"
-                app:buttonType="2"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:buttonType="3"
                 app:isBreadButton="true" />
 
             <com.breadwallet.presenter.customviews.BRButton
@@ -124,19 +126,19 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:layout_marginEnd="@dimen/bread_margin"
                 android:layout_weight="0.7"
                 android:background="@android:color/transparent"
-                android:minHeight="50dp"
+                android:minHeight="52dp"
                 android:paddingStart="8dp"
                 android:paddingTop="12dp"
                 android:paddingEnd="8dp"
-                android:paddingBottom="12dp"
+                android:paddingBottom="8dp"
                 android:text="@string/Send.scanLabel"
-                android:textColor="@color/light_gray"
-                android:textSize="16sp"
-                app:buttonType="2"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:buttonType="3"
                 app:isBreadButton="true" />
 
         </LinearLayout>
@@ -162,10 +164,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:text=""
-                android:textSize="28sp"
+                android:textSize="24sp"
                 app:customTFont="BarlowSemiCondensed-Medium.ttf"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -173,11 +174,10 @@
 
             <com.breadwallet.presenter.customviews.BREdit
                 android:id="@+id/amount_edit"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="256dp"
+                android:layout_height="50dp"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginStart="108dp"
                 android:layout_toEndOf="@id/iso_text"
                 android:background="@android:color/transparent"
                 android:clickable="false"
@@ -186,11 +186,13 @@
                 android:focusable="false"
                 android:focusableInTouchMode="false"
                 android:inputType="numberDecimal"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/black"
                 android:textIsSelectable="false"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/iso_text"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintLeft_toRightOf="@+id/iso_text"
                 app:layout_constraintRight_toLeftOf="@+id/iso_button"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/iso_text"
                 app:layout_constraintVertical_bias="0.5" />
 
@@ -199,17 +201,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/iso_text"
+                android:layout_marginLeft="0dp"
                 android:layout_marginTop="8dp"
                 android:text="Current Balance"
-                android:textColor="@color/light_gray"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sub_header"
                 android:visibility="invisible"
                 app:layout_constraintLeft_toLeftOf="@+id/iso_text"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/edit"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="0dp"
                 android:background="@drawable/edit"
@@ -269,6 +273,12 @@
             android:layout_height="1dp"
             android:background="@color/extra_light_gray" />
 
+        <View
+            android:id="@+id/separator5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/extra_light_gray" />
+
         <com.breadwallet.presenter.customviews.BRButton
             android:id="@+id/send_button"
             android:layout_width="match_parent"
@@ -277,12 +287,11 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="8dp"
-            android:background="@color/litecoin_litewallet_blue"
             android:padding="10dp"
             android:text="@string/Send.sendLabel"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            app:buttonType="1"
+            app:buttonType="3"
             app:isBreadButton="true" />
 
     </LinearLayout>

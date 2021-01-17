@@ -29,13 +29,14 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:clipChildren="false"
+            android:background="@color/black"
             android:clipToPadding="false">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/bread_bar"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@color/litecoin_litewallet_blue"
+                android:background="@color/black"
                 android:clipChildren="false"
                 android:clipToPadding="false"
                 android:contentInsetStart="0dp"
@@ -56,11 +57,17 @@
                         android:id="@+id/primary_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginBottom="32dp"
                         android:textColor="@color/white"
-                        android:textSize="30sp"
+                        android:textSize="40sp"
                         app:customTFont="BarlowSemiCondensed-Medium.ttf"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
                         tools:ignore="MissingConstraints"
-                        tools:text="$1000.00" />
+                        tools:text="1000.00000000" />
 
                     <com.breadwallet.presenter.customviews.BRText
                         android:id="@+id/secondary_price"
@@ -116,7 +123,7 @@
                 android:id="@+id/search_bar"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:background="@color/litecoin_litewallet_blue"
+                android:background="@color/wallet_orange"
                 android:contentInsetStart="0dp"
                 android:contentInsetLeft="0dp"
                 app:contentInsetLeft="0dp"
@@ -127,7 +134,7 @@
                 android:id="@+id/notification_bar"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:background="@color/litecoin_litewallet_blue"
+                android:background="@color/wallet_orange"
                 android:contentInsetStart="0dp"
                 android:contentInsetLeft="0dp"
                 app:breadText="No internet connection found.\nCheck your connection and try again."
@@ -193,6 +200,7 @@
         android:layout_above="@+id/bottom_toolbar_layout1"
         android:layout_below="@+id/toolbar_layout"
         android:animateLayoutChanges="true"
+        android:background="@color/black"
         android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -263,7 +271,7 @@
                 android:layout_weight="1"
                 android:text="@string/Send.sendLabel"
                 android:textAllCaps="true"
-                android:textColor="@color/pin_pad_text"
+                android:textColor="@color/almost_black"
                 app:customTFont="BarlowSemiCondensed-Medium.ttf" />
         </LinearLayout>
 
@@ -290,7 +298,7 @@
                 android:layout_weight="1"
                 android:text="@string/Button.receive"
                 android:textAllCaps="true"
-                android:textColor="@color/pin_pad_text"
+                android:textColor="@color/almost_black"
                 app:customTFont="BarlowSemiCondensed-Medium.ttf" />
         </LinearLayout>
         <!-- Leaving here for the Buy Tab-->
@@ -344,7 +352,7 @@
                 android:layout_weight="1"
                 android:text="@string/Button.menu"
                 android:textAllCaps="true"
-                android:textColor="@color/pin_pad_text"
+                android:textColor="@color/almost_black"
                 app:customTFont="BarlowSemiCondensed-Medium.ttf" />
         </LinearLayout>
 
